@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Assignment3.Models.ImShow>
+
+@{
+    ViewData["Title"] = "Show";
+}
+
+<h1>Show</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Caption)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src = "@Html.DisplayFor(modelItem => item.Image)">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Caption)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
